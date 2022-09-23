@@ -2,6 +2,7 @@ import React from "react";
 import main from "../assets/images/main.svg";
 import Wrapper from "../assets/wrappers/LandingPage";
 import { Logo } from "../components";
+import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <Wrapper>
@@ -21,7 +22,9 @@ const Landing = () => {
             distribution of letters, as opposed to using 'Content here, content
             here', making it look like readable English.
           </p>
-          <button className="btn btn-herro">Login/Register</button>
+          <Link to="/register" className="btn btn-herro">
+            Login/Register
+          </Link>
         </div>
         <img src={main} alt="job hunt" className="img main-img" />
       </div>

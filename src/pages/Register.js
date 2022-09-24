@@ -73,7 +73,7 @@ function Register() {
         />
 
         <button type="submit" className="btn btn-block" disabled={isLoading}>
-          Submit
+          {isLoading ? "Loading..." : "Submit"}
         </button>
         <p>
           <b>{values.isMember ? "Not a member yet?" : "Already a member?"}</b>

@@ -50,7 +50,11 @@ export const updateUser = createAsyncThunk(
       });
       return resp.data;
     } catch (error) {
-      console.log(error.response);
+      //console.log(error.response);
+      if (error.response.status === 401) {
+        thunkApi.dispatch(logoutUser());
+        return thunkApi.rejectWithValue("Unauthorized! Logging Out...");
+      }
       return thunkApi.rejectWithValue(error.response.data.msg);
     }
   }
